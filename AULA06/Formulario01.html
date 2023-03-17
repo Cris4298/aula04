@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+
+    <script type="text/javascript">
+       function Enviar(){
+         //var linha = document.createElement('br');
+          var par = document.getElementById('p'); 
+          var nome = document.getElementById("formNome");
+          var mensagem ='';
+           if (nome.value!=""){
+              var txt=  'Agradecemos o contato. \n' + nome.value + 'não deixe de voltar. \n';
+               var p2 = documet.createElement('p');
+            p2.textContent = txt;
+            document.body.appendChild(P2);
+
+          }
+          
+             var email = document.getElementById('formEmail');
+            if(mail.value!='')
+            var txt=  'O Email informado é. \n' + nome.value + 'não deixe de voltar. \n';
+               var p3 = documet.createElement('p');
+            p2.textContent = txt;
+            document.body.appendChild(P2);
+          
+
+           var valores = document.getElementsByName("cVeiculo");
+           for (var i=0; i<valores.length; i++)
+           {
+            var txt=  ' O Email informado é.. \n' + email.value;
+            var p2 = documet.createElement('p');
+            p2.textContent = txt;
+            document.body.appendChild(P3);
+            p3.style.color = "red";
+            p3.style.fontWeigght = "bold";
+           }
+           
+           {
+            
+                
+             if (valores[i].checked)
+             
+             {
+                mensagem = mensagem + ''  + valores[i].value + ' esta selecionado';
+             }
+
+             else
+
+             {
+                mensagem = mensagem + ''  + valores[i].value + ' não esta selecionado';
+             }
+           } 
+             var par = document.createElement('p');
+             par.textContent = mensagem;
+             document.body.appendChild(par)
+           //alert (mensagem);
+       }
+    </script>
+
+  </head>
+    <body>
+      <h1>Exemplo de elementos de um Formulário</h1>
+
+    <form>
+        <label for="formNome"> Nome: </label><br>
+        <input type="text" id="formNome" name="formNome" placeholder="Nome Sobrenome" ><br><br>
+        <label for="formEmail"> Email: </label><br>
+        <input type="email" id="formEmail" name="formEmail" placeholder="email@email.com" ><br>
+
+
+        <fieldset>
+            <legend>Selecione os meios de transporte</legend>
+            <input type="checkbox" name="cVeiculo" id="cVeiculo" value="ônibus">
+            <label for="cVeiculo">ônibus</label><br>
+    
+            <input type="checkbox" name="cVeiculo" id="cVeiculo2" value="Trem">
+            <label for="cVeiculo2">Trem</label><br>
+    
+            <input type="checkbox" name="cVeiculo" id="cVeiculo3" value="Metro">
+            <label for="cVeiculo3">Metro</label>
+        </fieldset><br>
+
+        <input type="button" id="btnSalvar"  onclick="Enviar()"  value="Salvar">
+       
+             
+
+    </form>
+
+
+    </body>
+</html>
