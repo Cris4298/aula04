@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html>
+  <html> 
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1">
+        <title> Formulário </title>
+
+        //--Modificar o exercício de temperatura para atender aos seguintes critérios:
+        -incluir um campo para temperatura em kelvin=ok
+        -verificar qual dos valores foi informado e converte para as demais temperaturas 
+          Celsius -> Kelvin e Farenheit 
+          Farenheit ->Celsius e Kelvin
+          kELVIN -> Celsius e Farenheit
+        -Modificar a aparencia da pagina (fontes, imagens, cores)
+        -incluir um botão limpar
+        no click o value de todos os inputs será definido como -vazio--//
+
+        //--c=(f-32)/1.8--//
+        //c=k-273.15
+
+        <script>
+          function Converter(){
+            let f = document.getElementById("temf").value; 
+            let tc = document.getElementById("temc").value;
+           
+
+            if(f=="")
+            {
+              document.getElementById("tempf").focus;
+              document.getElementById("tempf").style.bordercolor;
+             }
+
+             if(tc=="")
+             {
+              alert("Celsius não informado");
+             }
+
+             else
+             {
+              document.getElementById("tempf").style.bordercolor;
+
+              let c = (f-32)/1.8;
+              document.getElementById("tempc").value = c;
+            }
+         }
+        </script>
+        <style>
+          input{ 
+            border-color: grey;
+            border-radius: 5%;
+          }
+        </style>
+
+</head> 
+<body>
+    <h1>Exemplo página com entrada de dados e operções matemáticas </h1>
+
+
+    <form> 
+  
+        <input type="number" id="temf" name="temf" placeholder=" Farenheit " required><br>
+        <input type="number" name="tempc" id="tempc" placeholder=" Celsius " required><br>
+        <input type="number" name="tempk" id="tempk" placeholder=" kelvin " required><br>
+        <br><br>
+
+          <input type="button" id="btnConverter" onclick="Converter()" value="Salvar">
+        
+         </form>
+    </body>
+</html>
